@@ -1,0 +1,301 @@
+/* ==========================================================================
+   TAMAZOLA DESIGN SYSTEM - CORE CSS (Adaptado para Omeka S)
+   ========================================================================== */
+
+@import url('/application/asset/vendor/bootstrap/css/bootstrap.min.css');
+@import url('/application/asset/vendor/bootstrap-icons/font/bootstrap-icons.min.css');
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Variables de Color y Tipografía institucionales */
+:root {
+  --primary: #0a3663;
+  /* Azul principal institucional */
+  --secondary: #0d47a1;
+  /* Azul secundario (interactivos) */
+  --accent: #1565c0;
+  /* Azul acento */
+  --text-on-dark: #ffffff;
+  --text-muted-dark: #e6e6e6;
+  --text-dark: #212529;
+  /* Texto principal gris oscuro */
+  --text-muted: #6c757d;
+  /* Texto de soporte */
+  --bg-soft-primary: #f8f9fa;
+  /* Fondo gris muy suave */
+}
+
+.tamazola-theme-wrapper {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: var(--text-dark);
+  background-color: #ffffff;
+  /* Fondo limpio y blanco para Omeka */
+  overflow-x: hidden;
+}
+
+.tamazola-theme-wrapper h1,
+.tamazola-theme-wrapper h2,
+.tamazola-theme-wrapper h3,
+.tamazola-theme-wrapper h4,
+.tamazola-theme-wrapper h5,
+.tamazola-theme-wrapper h6,
+.tamazola-theme-wrapper .display-1,
+.tamazola-theme-wrapper .display-5 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 700;
+  letter-spacing: .2px;
+  color: var(--primary);
+}
+
+/* Escala tipográfica fluida */
+.tamazola-theme-wrapper .hero h1 {
+  font-size: clamp(1.75rem, 2vw + 1.25rem, 2.75rem);
+}
+
+.tamazola-theme-wrapper h2 {
+  font-size: clamp(1.25rem, 1vw + 1rem, 1.75rem);
+}
+
+.tamazola-theme-wrapper h3 {
+  font-size: clamp(1.05rem, .7vw + .9rem, 1.25rem);
+}
+
+/* Clases utilitarias de color */
+.tamazola-theme-wrapper .bg-primary-TAMAZOLA {
+  background-color: var(--primary) !important;
+}
+
+.tamazola-theme-wrapper .text-on-dark {
+  color: var(--text-on-dark) !important;
+}
+
+.tamazola-theme-wrapper .text-secondary-TAMAZOLA {
+  color: var(--secondary) !important;
+}
+
+.tamazola-theme-wrapper .text-accent {
+  color: var(--accent) !important;
+}
+
+.tamazola-theme-wrapper .border-secondary-TAMAZOLA {
+  border-color: var(--secondary) !important;
+}
+
+.tamazola-theme-wrapper .bg-secondary-TAMAZOLA {
+  background-color: var(--secondary) !important;
+}
+
+/* Botones Formales */
+.tamazola-theme-wrapper .btn-accent {
+  --bs-btn-color: #ffffff;
+  --bs-btn-bg: var(--accent);
+  --bs-btn-border-color: var(--accent);
+  --bs-btn-hover-bg: #0d47a1;
+  --bs-btn-hover-border-color: #0d47a1;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.tamazola-theme-wrapper .btn-secondary-TAMAZOLA {
+  --bs-btn-color: #ffffff;
+  --bs-btn-bg: var(--secondary);
+  --bs-btn-border-color: var(--secondary);
+  --bs-btn-hover-bg: #0a3663;
+  --bs-btn-hover-border-color: #0a3663;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+/* Botones Personalizados del Hero */
+.tamazola-theme-wrapper .btn-hero-primary {
+  background-color: var(--secondary) !important;
+  border: 2px solid var(--secondary) !important;
+  color: #ffffff !important;
+  transition: all 0.3s ease !important;
+}
+.tamazola-theme-wrapper .btn-hero-primary:hover {
+  background-color: #ffffff !important;
+  color: var(--secondary) !important;
+  border-color: var(--secondary) !important;
+}
+
+.tamazola-theme-wrapper .btn-hero-outline {
+  background-color: transparent !important;
+  border: 2px solid var(--secondary) !important;
+  color: var(--secondary) !important;
+  transition: all 0.3s ease !important;
+}
+.tamazola-theme-wrapper .btn-hero-outline:hover {
+  background-color: var(--secondary) !important;
+  color: #ffffff !important;
+}
+
+/* Ilustración del Hero (Cargada desde CSS para evitar borrado del HTML Purifier) */
+.tamazola-theme-wrapper .hero-illustration {
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary);
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgODAwIDYwMCcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJz4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0naGVyb0dyYWQnIHgxPScwJScgeTE9JzAlJyB4Mj0nMTAwJScgeTI9JzEwMCUnPgogICAgICA8c3RvcCBvZmZzZXQ9JzAlJyBzdG9wLWNvbG9yPScjMGEzNjYzJy8+CiAgICAgIDxzdG9wIG9mZnNldD0nMTAwJScgc3RvcC1jb2xvcj0nIzBkNDdhMScvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9JzgwMCcgaGVpZ2h0PSc2MDAnIGZpbGw9J3VybCgjaGVyb0dyYWQpJyAvPgogIDxjaXJjbGUgY3g9JzQwMCcgY3k9JzMwMCcgcj0nMTUwJyBmaWxsPScjMTU2NWMwJyBvcGFjaXR5PScwLjMnIC8+CiAgPHBhdGggZD0nTTI1MCwzMDAgTDM1MCwyMDAgTDU1MCwyMDAgTDQ1MCwzMDAgWicgZmlsbD0ncmdiYSgyNTUsMjU1LDI1NSwwLjEpJyBzdHJva2U9J3JnYmEoMjU1LDI1NSwyNTUsMC4zKScgc3Ryb2tlLXdpZHRoPScyJyAvPgogIDxwYXRoIGQ9J00zNTAsMjAwIEw0NTAsMTAwIEw2NTAsMTAwIEw1NTAsMjAwIFonIGZpbGw9J3JnYmEoMjU1LDI1NSwyNTUsMC4wNSknIHN0cm9rZT0ncmdiYSgyNTUsMjU1LDI1NSwwLjIpJyBzdHJva2Utd2lkdGg9JzInIC8+CiAgPGNpcmNsZSBjeD0nNDAwJyBjeT0nMzAwJyByPSc0MCcgZmlsbD0nI2ZmZmZmZicgb3BhY2l0eT0nMC45JyAvPgogIDxjaXJjbGUgY3g9JzUwMCcgY3k9JzE1MCcgcj0nMjAnIGZpbGw9JyNmZmZmZmYnIG9wYWNpdHk9JzAuNycgLz4KICA8Y2lyY2xlIGN4PSczMDAnIGN5PScyNTAnIHI9JzE1JyBmaWxsPScjZmZmZmZmJyBvcGFjaXR5PScwLjUnIC8+CiAgPHBhdGggZD0nTTQwMCwzMDAgTDUwMCwxNTAgTTQwMCwzMDAgTDMwMCwyNTAnIHN0cm9rZT0nI2ZmZmZmZicgc3Ryb2tlLXdpZHRoPSczJyBzdHJva2UtZGFzaGFycmF5PSc1LDUnIG9wYWNpdHk9JzAuNScgLz4KPC9zdmc+");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Efecto de Fondo del Hero (Circunferencias suaves de luz / Glassmorphism) */
+.tamazola-theme-wrapper .hero-ambient-bg {
+  position: relative;
+  background-color: transparent !important;
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(13, 71, 161, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 85% 30%, rgba(255, 179, 0, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 100%, rgba(10, 54, 99, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 10% 10%, rgba(106, 27, 154, 0.03) 0%, transparent 40%),
+    linear-gradient(135deg, #ffffff 0%, #f4f7fb 100%) !important;
+  overflow: hidden;
+}
+
+/* Contenedor de Secciones Formales */
+.tamazola-theme-wrapper .section-formal {
+  background: var(--bg-soft-primary);
+  border-top: 1px solid #e9ecef;
+  border-bottom: 1px solid #e9ecef;
+  color: var(--text-dark);
+  padding: 4rem 0;
+  margin-block: 4rem;
+}
+
+.tamazola-theme-wrapper .section-formal h2,
+.tamazola-theme-wrapper .section-formal h3,
+.tamazola-theme-wrapper .section-formal p,
+.tamazola-theme-wrapper .section-formal small {
+  color: var(--text-dark);
+}
+
+.tamazola-theme-wrapper .section-formal h2 {
+  color: var(--primary) !important;
+}
+
+/* Tarjetas Formales Académicas (Para Colecciones) */
+.tamazola-theme-wrapper .formal-card {
+  background: #ffffff;
+  border: 1px solid rgba(10, 54, 99, 0.15);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.tamazola-theme-wrapper .formal-card-header {
+  background-color: var(--primary);
+  color: #ffffff;
+  padding: 1rem 1.25rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-bottom: 3px solid var(--accent);
+}
+
+/* Reinicio Fuerte de Listas para proteger contra el CSS global de Omeka */
+.tamazola-theme-wrapper .formal-list-group {
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style-type: none !important;
+}
+
+.tamazola-theme-wrapper .formal-list-group li.formal-list-item {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+  padding: 1rem 1.25rem !important;
+  border-bottom: 1px solid #f1f3f5 !important;
+  background-color: transparent !important;
+  margin: 0 !important;
+  list-style-type: none !important;
+}
+
+.tamazola-theme-wrapper .formal-list-group li.formal-list-item::marker {
+  content: none !important;
+  display: none !important;
+}
+
+.tamazola-theme-wrapper .formal-list-group li.formal-list-item:before {
+  content: none !important;
+  display: none !important;
+}
+
+.tamazola-theme-wrapper .formal-list-group li.formal-list-item:last-child {
+  border-bottom: none !important;
+}
+
+.tamazola-theme-wrapper .formal-list-item span {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  line-height: 1.5;
+  padding-right: 1rem;
+}
+
+.tamazola-theme-wrapper .hover-accent:hover {
+  color: var(--accent) !important;
+  transition: color 0.2s ease;
+}
+
+/* ==========================================================================
+   EFECTOS DE SEPARACIÓN ENTRE SECCIONES (Islas Flotantes y Sombra Océano)
+   ========================================================================== */
+
+/* Secciones como "Islas Flotantes" separadas */
+.tamazola-theme-wrapper .floating-section {
+  position: relative;
+  background: linear-gradient(180deg, #ffffff 0%, #f4f7fb 100%);
+  border-radius: 3rem;
+  /* Bordes redondos arriba y abajo */
+  margin-bottom: 4rem;
+  /* Separación clara entre secciones */
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+  box-shadow: 0 15px 50px rgba(13, 71, 161, 0.2);
+  /* Sombra azul océano en todo el contorno */
+  z-index: 10;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  overflow: hidden;
+  /* Para contener las figuras decorativas */
+}
+
+/* El primer elemento flota sobre el Hero */
+.tamazola-theme-wrapper .floating-overlap {
+  margin-top: -4rem;
+}
+
+/* Figuras decorativas CSS (Abstractas y formales) */
+.tamazola-theme-wrapper .bg-shape-ocean-1 {
+  position: absolute;
+  top: -100px;
+  right: -50px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(13, 71, 161, 0.04) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.tamazola-theme-wrapper .bg-shape-ocean-2 {
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(10, 54, 99, 0.03) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Asegurar que el contenido dentro de las secciones quede sobre las figuras de fondo */
+.tamazola-theme-wrapper .floating-section>.container {
+  position: relative;
+  z-index: 2;
+}
