@@ -35,8 +35,8 @@
 ## 4. Patrones de Diseño (Componentes)
 Para mantener la coherencia visual con el resto del sitio, se deben seguir estos patrones:
 
-### A. Tarjetas Formales (Formal Cards)
-Se utiliza un diseño de tarjeta sólida blanca (`bg-white`) para mostrar las colecciones.
+### A. Tarjetas Grid Verticales (Formal Cards)
+Se utiliza un diseño de tarjeta sólida blanca (`bg-white`) para mostrar elementos en grillas de varias columnas.
 * **Clases Bootstrap usadas:** `card border-0 shadow-sm rounded-4 h-100 p-4`.
 * **Estructura de la tarjeta:**
   1. Pre-título pequeño (`.text-uppercase`, color Acento).
@@ -44,17 +44,27 @@ Se utiliza un diseño de tarjeta sólida blanca (`bg-white`) para mostrar las co
   3. Texto descriptivo (`p.small.text-muted.flex-grow-1`).
   4. Botón interactivo anclado al fondo (`.mt-auto`).
 
-### B. Botones de Redirección (Manejo de Enlaces)
-Omeka S no procesa bien algunos reproductores multimedia (como Spotify o YouTube). Por lo tanto, los ítems en las tarjetas deben incluir botones de redirección explícitos usando los colores semánticos de Bootstrap y los iconos correspondientes:
-* **YouTube:** `btn-outline-danger` + `bi-youtube`.
-* **Spotify:** `btn-outline-success` + `bi-spotify`.
-* **Repositorio UNAM:** `btn-outline-primary` + `bi-bank`.
-* **Web/Zotero/Glosarios:** `btn-outline-secondary` + iconos como `bi-globe`, `bi-link-45deg` o `bi-file-earmark-pdf`.
+### B. Tarjetas Horizontales de Recursos (Horizontal Cards)
+Utilizadas en las subcolecciones para mostrar ítems de forma apaisada, ideales para detallar publicaciones o videos de difusión.
+* **Estructura HTML:**
+  - Contenedor principal: `.horizontal-card` con la clase de Bootstrap `.position-relative`.
+  - Columna izquierda (`col-md-4 col-lg-3 col-xl-2 cover-column`): Contiene un gradiente temático (`.cover-book`, `.cover-chapter`, `.cover-article`, `.cover-web`, `.cover-ponencia`, etc.), un lomo de libro decorativo (`.cover-spine`) y un icono centrado.
+  - Columna derecha (`col-md-8 col-lg-9 col-xl-10`): Contiene el `.card-body` con título, autores, lorem ipsum (si no hay texto oficial), y el botón de acción.
+* **Comportamiento Clickable:** Para que toda la tarjeta actúe como un gran botón, se inyecta la clase `.stretched-link` de Bootstrap en la etiqueta del botón de acción `<a>`, extendiendo su área interactiva a toda la tarjeta.
+* **Hover Micro-Animations:** Al pasar el cursor por cualquier parte de la tarjeta, esta realiza una traslación hacia arriba (`translateY(-4px)`), gana sombra y el botón interno se ilumina de forma interactiva (definido en `style.css` para botones de tipo primary, danger, success y secondary).
+
+### C. Botones de Redirección (Manejo de Enlaces)
+Los recursos multimedia (como Spotify o YouTube) o enlaces académicos se manejan con botones con iconos explícitos y colores semánticos:
+* **YouTube:** `btn-outline-danger` + `bi-youtube` (para ponencias o videos).
+* **Spotify:** `btn-outline-success` + `bi-spotify` (para podcasts de audio).
+* **Repositorio UNAM:** `btn-outline-primary` + `bi-bank` (para visualización/lectura de PDFs).
+* **Descargas directas (EPUB):** `btn-outline-success` + `bi-download` con atributo `download`.
+* **Web/Zotero/Glosarios:** `btn-outline-secondary` o `btn-outline-primary` + iconos como `bi-globe`, `bi-link-45deg` o `bi-file-earmark-pdf`.
 
 ---
 
 ## 5. Solución de Problemas Críticos en Omeka S (Quirks)
-Al inyectar código en Omeka S, los estilos globales del tema de Omeka suelen "romper" o "aplastar" el CSS personalizado. La IA debe recordar lo siguiente al escribir CSS:
+Al inyectar código en Omeka S, los estilos globales del tema de Omeka suelen "romper" o "aplastar" el CSS personalizado. La IA debe recordar lo siguiente al escribir CSS y HTML:
 
 * **Protección de Listas (Bullets):** Omeka fuerza puntos negros (`•`) en las listas. Si usas listas (`<ul>`, `<li>`), debes forzarlas agresivamente desde `style.css`:
   ```css
@@ -70,15 +80,21 @@ Al inyectar código en Omeka S, los estilos globales del tema de Omeka suelen "r
   }
   ```
 * **Contenedor Aislado:** Todo el CSS personalizado debe tener como prefijo la clase `.papiit-theme-wrapper` para evitar afectar la interfaz de administración de Omeka S.
-* **Filtro de Seguridad de Omeka (HTML Purifier):** Al copiar el código HTML en los bloques de contenido de Omeka S, el sistema eliminará automáticamente cualquier etiqueta que esté vacía por considerarla inválida. Para usar iconos, es **estrictamente obligatorio** colocar un espacio en blanco inquebrantable (`&nbsp;`) dentro de cada etiqueta de icono para engañar al filtro.
-  * ❌ Incorrecto: `<i class="bi bi-youtube"></i>`
-  * ✅ Correcto: `<i class="bi bi-youtube">&nbsp;</i>`
-* **Navegación Interna Inhabilitada (Anchor Links rotos):** El enrutador de Omeka S y su filtro interceptan y rompen la navegación nativa mediante anclas (hashes `#id`). **Regla estricta:** NO incluir menús internos ni botones flotantes o tipo "Hero" que apunten a secciones dentro de la misma página (ej. `<a href="#publicaciones">`). El scroll nativo no funcionará bajo este CMS.
-* **Gráficos SVG Borrados:** El filtro HTML Purifier de Omeka S elimina sin piedad cualquier etiqueta `<svg>` que se escriba en el bloque HTML. Para usar ilustraciones vectoriales hechas con código, **está prohibido usar etiquetas `<svg>` en el layout**. Se debe inyectar la imagen vectorizada usando una clase en `style.css` con el atributo `background-image: url("data:image/svg+xml;base64,...")`.
+* **Filtro de Seguridad de Omeka (HTML Purifier - Etiquetas Vacías):** Al copiar el HTML en Omeka S, el sistema eliminará automáticamente cualquier etiqueta que esté vacía por considerarla inválida.
+  * Para usar iconos o figuras vacías, es **estrictamente obligatorio** colocar un carácter de contenido dentro de la etiqueta.
+  * **Alineación Perfecta en Círculos y Flexbox:** Si se usa un espacio común (`&nbsp;`) dentro de un icono `<i>` dentro de un círculo con flexbox centrado, el icono se verá **desplazado a la izquierda**. Para resolverlo y que se mantenga centrado, **se debe utilizar un Zero-Width Joiner (`&zwj;`) en lugar de un espacio**.
+    * ❌ Incorrecto (desplazado): `<i class="bi bi-broadcast">&nbsp;</i>`
+    * ✅ Correcto (centrado): `<i class="bi bi-broadcast">&zwj;</i>`
+* **Compatibilidad de Tarjetas Clickables (Evitar Enlaces en Bloque):** En HTML5 es válido colocar divs dentro de un enlace `<a>`, pero HTML Purifier en Omeka S suele desarmar esta estructura por regirse bajo estándares antiguos.
+  * **Solución Obligatoria:** Mantener el enlace `<a>` anidado normalmente dentro del texto y utilizar la técnica de CSS `.stretched-link` de Bootstrap junto con `.position-relative` en la tarjeta. Esto simula el clic en toda la tarjeta sin envolver bloques visuales en un tag `<a>`.
+* **Navegación Interna Inhabilitada (Anchor Links rotos):** El enrutador de Omeka S rompe la navegación nativa mediante anclas (hashes `#id`). **Regla estricta:** NO incluir menús internos ni botones flotantes o tipo "Hero" que apunten a secciones dentro de la misma página.
+* **Gráficos SVG Borrados:** El filtro HTML Purifier elimina etiquetas `<svg>`. **Está prohibido usar etiquetas `<svg>` en el layout HTML**. Se debe inyectar la imagen vectorizada usando una clase en `style.css` con el atributo `background-image: url("data:image/svg+xml;base64,...")`.
 
 ---
 
 ## 6. Archivos Clave del Proyecto
-1. `PAPIIT/home_layout.html`: Contiene la estructura principal en HTML5 puro (usando grid de Bootstrap).
-2. `PAPIIT/style.css`: Contiene las variables institucionales y los overrides necesarios.
-3. `Omeka_colecciones.md`: Fuente única de verdad para el contenido textual y los hipervínculos de los recursos.
+1. **[Tests/papiit.html](file:///d:/OMEKAS/Tests/papiit.html)**: Portal de navegación o Home del sitio. Rediseñado como un hub que enlaza a las subpáginas `/s/papiit/page/publicaciones` y `/s/papiit/page/ProductosDeDifusionYDivulgacion` mediante tarjetas interactivas gigantes, libre de listados redundantes.
+2. **[Tests/coleccionesPAPIIT/publicaciones.html](file:///d:/OMEKAS/Tests/coleccionesPAPIIT/publicaciones.html)**: Subpágina de la colección de Publicaciones con descarga de EPUBs y lectura directa de PDFs.
+3. **[Tests/coleccionesPAPIIT/productosDeDifusionYDivulgacion.html](file:///d:/OMEKAS/Tests/coleccionesPAPIIT/productosDeDifusionYDivulgacion.html)**: Subpágina de la colección de Difusión con tarjetas horizontales completamente integradas con `.stretched-link` y el nuevo gradiente del héroe color vino.
+4. **[PAPIIT/style.css](file:///d:/OMEKAS/PAPIIT/style.css)**: Hoja de estilos centralizada para el tema PAPIIT. Contiene variables, gradientes de héroes, colores temáticos de portadas y transiciones hover de tarjetas.
+5. **[Omeka_colecciones.md](file:///d:/OMEKAS/Omeka_colecciones.md)**: Fuente única de verdad para el contenido textual y los hipervínculos de los recursos.

@@ -299,3 +299,138 @@ html {
   position: relative;
   z-index: 2;
 }
+
+/* ==========================================================================
+   TARJETAS HORIZONTALES PARA PUBLICACIONES ACADÉMICAS
+   ========================================================================== */
+
+.papiit-theme-wrapper .horizontal-card {
+  background: #ffffff;
+  border: 1px solid rgba(10, 54, 99, 0.12) !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04) !important;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.papiit-theme-wrapper .horizontal-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(10, 54, 99, 0.08) !important;
+}
+
+.papiit-theme-wrapper .cover-column {
+  min-height: 180px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  padding: 1.5rem;
+}
+
+/* Degradados específicos por subcolección */
+.papiit-theme-wrapper .cover-book {
+  background: linear-gradient(135deg, #004d40 0%, #00796b 100%) !important; /* Verde Teal oscuro */
+}
+
+.papiit-theme-wrapper .cover-chapter {
+  background: linear-gradient(135deg, #4a148c 0%, #7b1fa2 100%) !important; /* Púrpura oscuro */
+}
+
+.papiit-theme-wrapper .cover-article {
+  background: linear-gradient(135deg, #880e4f 0%, #c2185b 100%) !important; /* Magenta/Rosa oscuro */
+}
+
+/* Efecto de lomo de libro en el borde izquierdo de la portada */
+.papiit-theme-wrapper .cover-spine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 12px;
+  background: rgba(0, 0, 0, 0.15);
+  box-shadow: inset -5px 0 5px rgba(0, 0, 0, 0.12);
+  z-index: 2;
+}
+
+.papiit-theme-wrapper .cover-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+}
+
+/* Hero rediseñado para subpáginas (Publicaciones) */
+.papiit-theme-wrapper .hero-publications {
+  border-radius: 3rem !important;
+  background: 
+    radial-gradient(circle at 85% 15%, rgba(21, 101, 192, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 15% 85%, rgba(13, 71, 161, 0.1) 0%, transparent 50%),
+    linear-gradient(135deg, #061d33 0%, #0a3663 100%) !important;
+  box-shadow: 0 30px 60px rgba(10, 54, 99, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto para portadas pendientes (en dictamen / compilación) */
+.papiit-theme-wrapper .cover-pending {
+  filter: grayscale(0.5);
+  opacity: 0.85;
+}
+
+/* Hero rediseñado para subpáginas (Difusión y Divulgación) */
+.papiit-theme-wrapper .hero-difusion {
+  border-radius: 3rem !important;
+  background: 
+    radial-gradient(circle at 85% 15%, rgba(239, 83, 80, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 15% 85%, rgba(176, 190, 197, 0.1) 0%, transparent 50%),
+    linear-gradient(135deg, #2c070e 0%, #4d101c 100%) !important;
+  box-shadow: 0 30px 60px rgba(44, 7, 14, 0.25) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Portadas temáticas para Difusión y Divulgación */
+.papiit-theme-wrapper .cover-web {
+  background: linear-gradient(135deg, #e65100 0%, #ff8f00 100%) !important; /* Naranja/Ámbar */
+}
+
+.papiit-theme-wrapper .cover-ponencia {
+  background: linear-gradient(135deg, #b71c1c 0%, #e53935 100%) !important; /* Rojo/YouTube */
+}
+
+.papiit-theme-wrapper .cover-presentacion {
+  background: linear-gradient(135deg, #37474f 0%, #546e7a 100%) !important; /* Gris Pizarra */
+}
+
+.papiit-theme-wrapper .cover-podcast {
+  background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%) !important; /* Verde Bosque/Spotify */
+}
+
+.papiit-theme-wrapper .cover-glosario {
+  background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%) !important; /* Azul Rey */
+}
+
+.papiit-theme-wrapper .cover-bibliografia {
+  background: linear-gradient(135deg, #311b92 0%, #5e35b1 100%) !important; /* Violeta Profundo */
+}
+
+/* Efecto para resaltar botones al hacer hover sobre la tarjeta completa */
+.papiit-theme-wrapper .horizontal-card:hover .btn-outline-primary {
+  background-color: var(--primary) !important;
+  color: #ffffff !important;
+}
+.papiit-theme-wrapper .horizontal-card:hover .btn-outline-danger {
+  background-color: #d32f2f !important;
+  color: #ffffff !important;
+}
+.papiit-theme-wrapper .horizontal-card:hover .btn-outline-success {
+  background-color: #2e7d32 !important;
+  color: #ffffff !important;
+}
+.papiit-theme-wrapper .horizontal-card:hover .btn-outline-secondary {
+  background-color: #6c757d !important;
+  color: #ffffff !important;
+}
+

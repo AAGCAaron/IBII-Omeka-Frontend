@@ -294,6 +294,98 @@ html {
   z-index: 0;
 }
 
+/* ==========================================================================
+   TARJETAS HORIZONTALES PARA EL ARCHIVO COMUNAL
+   ========================================================================== */
+
+.tamazola-theme-wrapper .horizontal-card {
+  background: #ffffff;
+  border: 1px solid rgba(43, 23, 4, 0.12) !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04) !important;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tamazola-theme-wrapper .horizontal-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(43, 23, 4, 0.08) !important;
+}
+
+.tamazola-theme-wrapper .cover-column {
+  min-height: 180px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  padding: 1.5rem;
+}
+
+/* Degradados específicos por tipo de archivo */
+.tamazola-theme-wrapper .cover-document {
+  background: linear-gradient(135deg, #5d4037 0%, #3e2723 100%) !important; /* Marrón tierra/pergamino */
+}
+
+.tamazola-theme-wrapper .cover-folder {
+  background: linear-gradient(135deg, #a0522d 0%, #8b4513 100%) !important; /* Siena tostado/rust */
+}
+
+.tamazola-theme-wrapper .cover-map {
+  background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%) !important; /* Verde oliva/bosque */
+}
+
+/* Efecto de lomo en el borde izquierdo */
+.tamazola-theme-wrapper .cover-spine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 12px;
+  background: rgba(0, 0, 0, 0.15);
+  box-shadow: inset -5px 0 5px rgba(0, 0, 0, 0.12);
+  z-index: 2;
+}
+
+.tamazola-theme-wrapper .cover-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+}
+
+/* Hero rediseñado para Tamazola Archivo (Earthy Dark Banner) */
+.tamazola-theme-wrapper .hero-archivo {
+  border-radius: 3rem !important;
+  background: 
+    radial-gradient(circle at 85% 15%, rgba(212, 175, 55, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 15% 85%, rgba(160, 82, 45, 0.15) 0%, transparent 50%),
+    linear-gradient(135deg, #2b1704 0%, #44250a 100%) !important;
+  box-shadow: 0 30px 60px rgba(43, 23, 4, 0.25) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto para portadas pendientes */
+.tamazola-theme-wrapper .cover-pending {
+  filter: grayscale(0.5);
+  opacity: 0.85;
+}
+
+/* Resaltar botones al hacer hover en la tarjeta */
+.tamazola-theme-wrapper .horizontal-card:hover .btn-outline-primary {
+  background-color: var(--primary) !important;
+  color: #ffffff !important;
+}
+.tamazola-theme-wrapper .horizontal-card:hover .btn-outline-success {
+  background-color: #2e7d32 !important;
+  color: #ffffff !important;
+}
+.tamazola-theme-wrapper .horizontal-card:hover .btn-outline-secondary {
+  background-color: #6c757d !important;
+  color: #ffffff !important;
+}
+
 /* Asegurar que el contenido dentro de las secciones quede sobre las figuras de fondo */
 .tamazola-theme-wrapper .floating-section>.container {
   position: relative;
