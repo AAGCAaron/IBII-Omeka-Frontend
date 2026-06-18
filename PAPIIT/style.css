@@ -318,6 +318,18 @@ html {
   box-shadow: 0 12px 25px rgba(10, 54, 99, 0.08) !important;
 }
 
+.papiit-theme-wrapper .horizontal-card:hover .btn-hero-primary {
+  background-color: #ffffff !important;
+  color: var(--secondary) !important;
+  border-color: var(--secondary) !important;
+}
+
+.papiit-theme-wrapper .horizontal-card:hover .btn-hero-primary[style*="var(--accent)"] {
+  background-color: #ffffff !important;
+  color: var(--accent) !important;
+  border-color: var(--accent) !important;
+}
+
 .papiit-theme-wrapper .cover-column {
   min-height: 180px;
   position: relative;

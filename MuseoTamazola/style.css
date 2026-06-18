@@ -306,10 +306,21 @@ html {
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .tamazola-theme-wrapper .horizontal-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 25px rgba(43, 23, 4, 0.08) !important;
+}
+
+.tamazola-theme-wrapper .horizontal-card:hover .btn-hero-primary[style*="#8b4513"] {
+  background-color: #ffffff !important;
+  color: #8b4513 !important;
+  border-color: #8b4513 !important;
+}
+
+.tamazola-theme-wrapper .horizontal-card:hover .btn-hero-primary[style*="#2e7d32"] {
+  background-color: #ffffff !important;
+  color: #2e7d32 !important;
+  border-color: #2e7d32 !important;
 }
 
 .tamazola-theme-wrapper .cover-column {
@@ -390,4 +401,30 @@ html {
 .tamazola-theme-wrapper .floating-section>.container {
   position: relative;
   z-index: 2;
+}
+
+/* Hero rediseñado para Tamazola Museo (Forest/Green Dark Banner) */
+.tamazola-theme-wrapper .hero-museo {
+  border-radius: 3rem !important;
+  background: 
+    radial-gradient(circle at 85% 15%, rgba(139, 195, 74, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 15% 85%, rgba(46, 125, 50, 0.15) 0%, transparent 50%),
+    linear-gradient(135deg, #0e3013 0%, #1c4d22 100%) !important;
+  box-shadow: 0 30px 60px rgba(14, 48, 19, 0.25) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Portadas temáticas para Museo Digital Comunitario */
+.tamazola-theme-wrapper .cover-audio {
+  background: linear-gradient(135deg, #4a148c 0%, #7b1fa2 100%) !important; /* Púrpura/Música */
+}
+
+.tamazola-theme-wrapper .cover-tradition {
+  background: linear-gradient(135deg, #e65100 0%, #f57c00 100%) !important; /* Naranja/Costumbres */
+}
+
+.tamazola-theme-wrapper .cover-oral {
+  background: linear-gradient(135deg, #1b5e20 0%, #388e3c 100%) !important; /* Verde/Memoria Oral */
 }
