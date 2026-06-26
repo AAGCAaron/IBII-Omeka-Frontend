@@ -428,3 +428,7 @@ html {
 .tamazola-theme-wrapper .cover-oral {
   background: linear-gradient(135deg, #1b5e20 0%, #388e3c 100%) !important; /* Verde/Memoria Oral */
 }
+
+/* Redefinir text-primary a azul marino obscuro */
+.text-primary { color: #0a3663 !important; }
+

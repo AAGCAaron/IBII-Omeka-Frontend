@@ -445,4 +445,7 @@ html {
   background-color: #6c757d !important;
   color: #ffffff !important;
 }
-
+
+/* Redefinir text-primary a azul marino obscuro */
+.text-primary { color: #0a3663 !important; }
+
