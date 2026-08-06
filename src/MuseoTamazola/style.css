@@ -432,3 +432,9 @@ html {
 /* Redefinir text-primary a un Slate/Navy moderno y premium */
 .text-primary { color: #1e293b !important; }
 
+
+
+/* Clases de colores tematicas para Archivo Bienes Comunales */
+.tamazola-theme-wrapper .cover-verde { background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%) !important; }
+.tamazola-theme-wrapper .cover-cafe { background: linear-gradient(135deg, #4a3b32 0%, #6d4c41 100%) !important; }
+.tamazola-theme-wrapper .cover-pastel { background: linear-gradient(135deg, #5c6b73 0%, #9db4c0 100%) !important; }
