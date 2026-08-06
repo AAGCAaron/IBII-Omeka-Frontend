@@ -11,11 +11,11 @@ html {
 
 /* Variables de Color y Tipografía institucionales */
 :root {
-  --primary: #0a3663;
+  --papiit-primary: #0a3663;
   /* Azul principal institucional */
-  --secondary: #0d47a1;
+  --papiit-secondary: #0d47a1;
   /* Azul secundario (interactivos) */
-  --accent: #1565c0;
+  --papiit-accent: #1565c0;
   /* Azul acento */
   --text-on-dark: #ffffff;
   --text-muted-dark: #e6e6e6;
@@ -46,7 +46,7 @@ html {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 700;
   letter-spacing: .2px;
-  color: var(--primary);
+  color: var(--papiit-primary);
 }
 
 /* Escala tipográfica fluida */
@@ -64,7 +64,7 @@ html {
 
 /* Clases utilitarias de color */
 .papiit-theme-wrapper .bg-primary-papiit {
-  background-color: var(--primary) !important;
+  background-color: var(--papiit-primary) !important;
 }
 
 .papiit-theme-wrapper .text-on-dark {
@@ -72,26 +72,26 @@ html {
 }
 
 .papiit-theme-wrapper .text-secondary-papiit {
-  color: var(--secondary) !important;
+  color: var(--papiit-secondary) !important;
 }
 
 .papiit-theme-wrapper .text-accent {
-  color: var(--accent) !important;
+  color: var(--papiit-accent) !important;
 }
 
 .papiit-theme-wrapper .border-secondary-papiit {
-  border-color: var(--secondary) !important;
+  border-color: var(--papiit-secondary) !important;
 }
 
 .papiit-theme-wrapper .bg-secondary-papiit {
-  background-color: var(--secondary) !important;
+  background-color: var(--papiit-secondary) !important;
 }
 
 /* Botones Formales */
 .papiit-theme-wrapper .btn-accent {
   --bs-btn-color: #ffffff;
-  --bs-btn-bg: var(--accent);
-  --bs-btn-border-color: var(--accent);
+  --bs-btn-bg: var(--papiit-accent);
+  --bs-btn-border-color: var(--papiit-accent);
   --bs-btn-hover-bg: #0d47a1;
   --bs-btn-hover-border-color: #0d47a1;
   font-weight: 700;
@@ -100,8 +100,8 @@ html {
 
 .papiit-theme-wrapper .btn-secondary-papiit {
   --bs-btn-color: #ffffff;
-  --bs-btn-bg: var(--secondary);
-  --bs-btn-border-color: var(--secondary);
+  --bs-btn-bg: var(--papiit-secondary);
+  --bs-btn-border-color: var(--papiit-secondary);
   --bs-btn-hover-bg: #0a3663;
   --bs-btn-hover-border-color: #0a3663;
   font-weight: 600;
@@ -110,25 +110,27 @@ html {
 
 /* Botones Personalizados del Hero */
 .papiit-theme-wrapper .btn-hero-primary {
-  background-color: var(--secondary) !important;
-  border: 2px solid var(--secondary) !important;
+  background-color: var(--papiit-secondary) !important;
+  border: 2px solid var(--papiit-secondary) !important;
   color: #ffffff !important;
   transition: all 0.3s ease !important;
 }
+
 .papiit-theme-wrapper .btn-hero-primary:hover {
   background-color: #ffffff !important;
-  color: var(--secondary) !important;
-  border-color: var(--secondary) !important;
+  color: var(--papiit-secondary) !important;
+  border-color: var(--papiit-secondary) !important;
 }
 
 .papiit-theme-wrapper .btn-hero-outline {
   background-color: transparent !important;
-  border: 2px solid var(--secondary) !important;
-  color: var(--secondary) !important;
+  border: 2px solid var(--papiit-secondary) !important;
+  color: var(--papiit-secondary) !important;
   transition: all 0.3s ease !important;
 }
+
 .papiit-theme-wrapper .btn-hero-outline:hover {
-  background-color: var(--secondary) !important;
+  background-color: var(--papiit-secondary) !important;
   color: #ffffff !important;
 }
 
@@ -136,7 +138,7 @@ html {
 .papiit-theme-wrapper .hero-illustration {
   width: 100%;
   height: 100%;
-  background-color: var(--primary);
+  background-color: var(--papiit-primary);
   background-image: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgODAwIDYwMCcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJz4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0naGVyb0dyYWQnIHgxPScwJScgeTE9JzAlJyB4Mj0nMTAwJScgeTI9JzEwMCUnPgogICAgICA8c3RvcCBvZmZzZXQ9JzAlJyBzdG9wLWNvbG9yPScjMGEzNjYzJy8+CiAgICAgIDxzdG9wIG9mZnNldD0nMTAwJScgc3RvcC1jb2xvcj0nIzBkNDdhMScvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9JzgwMCcgaGVpZ2h0PSc2MDAnIGZpbGw9J3VybCgjaGVyb0dyYWQpJyAvPgogIDxjaXJjbGUgY3g9JzQwMCcgY3k9JzMwMCcgcj0nMTUwJyBmaWxsPScjMTU2NWMwJyBvcGFjaXR5PScwLjMnIC8+CiAgPHBhdGggZD0nTTI1MCwzMDAgTDM1MCwyMDAgTDU1MCwyMDAgTDQ1MCwzMDAgWicgZmlsbD0ncmdiYSgyNTUsMjU1LDI1NSwwLjEpJyBzdHJva2U9J3JnYmEoMjU1LDI1NSwyNTUsMC4zKScgc3Ryb2tlLXdpZHRoPScyJyAvPgogIDxwYXRoIGQ9J00zNTAsMjAwIEw0NTAsMTAwIEw2NTAsMTAwIEw1NTAsMjAwIFonIGZpbGw9J3JnYmEoMjU1LDI1NSwyNTUsMC4wNSknIHN0cm9rZT0ncmdiYSgyNTUsMjU1LDI1NSwwLjIpJyBzdHJva2Utd2lkdGg9JzInIC8+CiAgPGNpcmNsZSBjeD0nNDAwJyBjeT0nMzAwJyByPSc0MCcgZmlsbD0nI2ZmZmZmZicgb3BhY2l0eT0nMC45JyAvPgogIDxjaXJjbGUgY3g9JzUwMCcgY3k9JzE1MCcgcj0nMjAnIGZpbGw9JyNmZmZmZmYnIG9wYWNpdHk9JzAuNycgLz4KICA8Y2lyY2xlIGN4PSczMDAnIGN5PScyNTAnIHI9JzE1JyBmaWxsPScjZmZmZmZmJyBvcGFjaXR5PScwLjUnIC8+CiAgPHBhdGggZD0nTTQwMCwzMDAgTDUwMCwxNTAgTTQwMCwzMDAgTDMwMCwyNTAnIHN0cm9rZT0nI2ZmZmZmZicgc3Ryb2tlLXdpZHRoPSczJyBzdHJva2UtZGFzaGFycmF5PSc1LDUnIG9wYWNpdHk9JzAuNScgLz4KPC9zdmc+");
   background-size: cover;
   background-position: center;
@@ -147,7 +149,7 @@ html {
 .papiit-theme-wrapper .hero-ambient-bg {
   position: relative;
   background-color: transparent !important;
-  background-image: 
+  background-image:
     radial-gradient(circle at 15% 50%, rgba(13, 71, 161, 0.06) 0%, transparent 50%),
     radial-gradient(circle at 85% 30%, rgba(255, 179, 0, 0.08) 0%, transparent 50%),
     radial-gradient(circle at 80% 100%, rgba(10, 54, 99, 0.08) 0%, transparent 50%),
@@ -174,7 +176,7 @@ html {
 }
 
 .papiit-theme-wrapper .section-formal h2 {
-  color: var(--primary) !important;
+  color: var(--papiit-primary) !important;
 }
 
 /* Tarjetas Formales Académicas (Para Colecciones) */
@@ -190,12 +192,12 @@ html {
 }
 
 .papiit-theme-wrapper .formal-card-header {
-  background-color: var(--primary);
+  background-color: var(--papiit-primary);
   color: #ffffff;
   padding: 1rem 1.25rem;
   font-weight: 700;
   font-size: 1.1rem;
-  border-bottom: 3px solid var(--accent);
+  border-bottom: 3px solid var(--papiit-accent);
 }
 
 /* Reinicio Fuerte de Listas para proteger contra el CSS global de Omeka */
@@ -238,7 +240,252 @@ html {
 }
 
 .papiit-theme-wrapper .hover-accent:hover {
-  color: var(--accent) !important;
+  color: var(--papiit-accent) !important;
+  transition: color 0.2s ease;
+}
+
+/* ==========================================================================
+   EFECTOS DE SEPARACIÓN ENTRE SECCIONES (Islas Flotantes y Sombra Océano)
+   ========================================================================== */
+
+/* Secciones como "Islas Flotantes" separadas */
+.papiit-theme-wrapper .floating-section {
+  position: relative;
+  background: linear-gradient(180deg, #ffffff 0%, #f4f7fb 100%);
+  border-radius: 3rem;
+  /* Bordes redondos arriba y abajo */
+  margin-bottom: 4rem;
+  /* Separación clara entre secciones */
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+  box-shadow: 0 15px 50px rgba(37, 41, 48, 0.13);
+  /* Sombra azul océano en todo el contorno */
+  z-index: 10;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  overflow: hidden;
+  /* Para contener las figuras decorativas */
+}
+
+/* El primer elemento flota sobre el Hero */
+.papiit-theme-wrapper .floating-overlap {
+  margin-top: -4rem;
+}
+
+/* Figuras decorativas CSS (Abstractas y formales) */
+.papiit-theme-wrapper .bg-shape-ocean-1 {
+  position: absolute;
+  top: -100px;
+  right: -50px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(13, 71, 161, 0.04) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.papiit-theme-wrapper .bg-shape-ocean-2 {
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(10, 54, 99, 0.03) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Asegurar que el contenido dentro de las secciones quede sobre las figuras de fondo */
+.papiit-theme-wrapper .floating-section>.container {
+  position: relative;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   TARJETAS HORIZONTALES PARA PUBLICACIONES ACADÉMICAS
+   ========================================================================== */
+
+.papiit-theme-wrapper .horizontal-card {
+  background: #ffffff;
+  border: 1px solid rgba(10, 54, 99, 0.12) !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04) !important;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.papiit-theme-wrapper .btn-hero-primary {
+  background-color: var(--papiit-primary) !important;
+  border: 2px solid var(--papiit-primary) !important;
+  color: #ffffff !important;
+  transition: all 0.3s ease !important;
+}
+
+.papiit-theme-wrapper .btn-hero-primary:hover {
+  background-color: #072b50 !important;
+  border-color: #072b50 !important;
+  color: #ffffff !important;
+}
+
+.papiit-theme-wrapper .btn-hero-accent {
+  background-color: var(--papiit-accent) !important;
+  border: 2px solid var(--papiit-accent) !important;
+  color: #ffffff !important;
+  transition: all 0.3s ease !important;
+}
+
+.papiit-theme-wrapper .btn-hero-accent:hover {
+  background-color: #0b4b8f !important;
+  border-color: #0b4b8f !important;
+  color: #ffffff !important;
+}
+
+.papiit-theme-wrapper .btn-hero-warning {
+  background-color: #f59e0b !important;
+  border: 2px solid #f59e0b !important;
+  color: #ffffff !important;
+  transition: all 0.3s ease !important;
+}
+
+.papiit-theme-wrapper .btn-hero-warning:hover {
+  background-color: #d97706 !important;
+  border-color: #d97706 !important;
+  color: #ffffff !important;
+}
+
+.papiit-theme-wrapper .btn-hero-indigo {
+  background-color: #4f46e5 !important;
+  border: 2px solid #4f46e5 !important;
+  color: #ffffff !important;
+  transition: all 0.3s ease !important;
+}
+
+.papiit-theme-wrapper .btn-hero-indigo:hover {
+  background-color: #4338ca !important;
+  border-color: #4338ca !important;
+  color: #ffffff !important;
+}
+
+.papiit-theme-wrapper .btn-hero-outline {
+  background-color: transparent !important;
+  border: 2px solid var(--papiit-secondary) !important;
+  color: var(--papiit-secondary) !important;
+  transition: all 0.3s ease !important;
+}
+
+.papiit-theme-wrapper .btn-hero-outline:hover {
+  background-color: var(--papiit-secondary) !important;
+  color: #ffffff !important;
+}
+
+/* Ilustración del Hero (Cargada desde CSS para evitar borrado del HTML Purifier) */
+.papiit-theme-wrapper .hero-illustration {
+  width: 100%;
+  height: 100%;
+  background-color: var(--papiit-primary);
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgODAwIDYwMCcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJz4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0naGVyb0dyYWQnIHgxPScwJScgeTE9JzAlJyB4Mj0nMTAwJScgeTI9JzEwMCUnPgogICAgICA8c3RvcCBvZmZzZXQ9JzAlJyBzdG9wLWNvbG9yPScjMGEzNjYzJy8+CiAgICAgIDxzdG9wIG9mZnNldD0nMTAwJScgc3RvcC1jb2xvcj0nIzBkNDdhMScvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9JzgwMCcgaGVpZ2h0PSc2MDAnIGZpbGw9J3VybCgjaGVyb0dyYWQpJyAvPgogIDxjaXJjbGUgY3g9JzQwMCcgY3k9JzMwMCcgcj0nMTUwJyBmaWxsPScjMTU2NWMwJyBvcGFjaXR5PScwLjMnIC8+CiAgPHBhdGggZD0nTTI1MCwzMDAgTDM1MCwyMDAgTDU1MCwyMDAgTDQ1MCwzMDAgWicgZmlsbD0ncmdiYSgyNTUsMjU1LDI1NSwwLjEpJyBzdHJva2U9J3JnYmEoMjU1LDI1NSwyNTUsMC4zKScgc3Ryb2tlLXdpZHRoPScyJyAvPgogIDxwYXRoIGQ9J00zNTAsMjAwIEw0NTAsMTAwIEw2NTAsMTAwIEw1NTAsMjAwIFonIGZpbGw9J3JnYmEoMjU1LDI1NSwyNTUsMC4wNSknIHN0cm9rZT0ncmdiYSgyNTUsMjU1LDI1NSwwLjIpJyBzdHJva2Utd2lkdGg9JzInIC8+CiAgPGNpcmNsZSBjeD0nNDAwJyBjeT0nMzAwJyByPSc0MCcgZmlsbD0nI2ZmZmZmZicgb3BhY2l0eT0nMC45JyAvPgogIDxjaXJjbGUgY3g9JzUwMCcgY3k9JzE1MCcgcj0nMjAnIGZpbGw9JyNmZmZmZmYnIG9wYWNpdHk9JzAuNycgLz4KICA8Y2lyY2xlIGN4PSczMDAnIGN5PScyNTAnIHI9JzE1JyBmaWxsPScjZmZmZmZmJyBvcGFjaXR5PScwLjUnIC8+CiAgPHBhdGggZD0nTTQwMCwzMDAgTDUwMCwxNTAgTTQwMCwzMDAgTDMwMCwyNTAnIHN0cm9rZT0nI2ZmZmZmZicgc3Ryb2tlLXdpZHRoPSczJyBzdHJva2UtZGFzaGFycmF5PSc1LDUnIG9wYWNpdHk9JzAuNScgLz4KPC9zdmc+");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Efecto de Fondo del Hero (Circunferencias suaves de luz / Glassmorphism) */
+.papiit-theme-wrapper .hero-ambient-bg {
+  position: relative;
+  background-color: transparent !important;
+  background-image:
+    radial-gradient(circle at 15% 50%, rgba(13, 71, 161, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 85% 30%, rgba(255, 179, 0, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 100%, rgba(10, 54, 99, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 10% 10%, rgba(106, 27, 154, 0.03) 0%, transparent 40%),
+    linear-gradient(135deg, #ffffff 0%, #f4f7fb 100%) !important;
+  overflow: hidden;
+}
+
+/* Contenedor de Secciones Formales */
+.papiit-theme-wrapper .section-formal {
+  background: var(--bg-soft-primary);
+  border-top: 1px solid #e9ecef;
+  border-bottom: 1px solid #e9ecef;
+  color: var(--text-dark);
+  padding: 4rem 0;
+  margin-block: 4rem;
+}
+
+.papiit-theme-wrapper .section-formal h2,
+.papiit-theme-wrapper .section-formal h3,
+.papiit-theme-wrapper .section-formal p,
+.papiit-theme-wrapper .section-formal small {
+  color: var(--text-dark);
+}
+
+.papiit-theme-wrapper .section-formal h2 {
+  color: var(--papiit-primary) !important;
+}
+
+/* Tarjetas Formales Académicas (Para Colecciones) */
+.papiit-theme-wrapper .formal-card {
+  background: #ffffff;
+  border: 1px solid rgba(10, 54, 99, 0.15);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.papiit-theme-wrapper .formal-card-header {
+  background-color: var(--papiit-primary);
+  color: #ffffff;
+  padding: 1rem 1.25rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-bottom: 3px solid var(--papiit-accent);
+}
+
+/* Reinicio Fuerte de Listas para proteger contra el CSS global de Omeka */
+.papiit-theme-wrapper .formal-list-group {
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style-type: none !important;
+}
+
+.papiit-theme-wrapper .formal-list-group li.formal-list-item {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+  padding: 1rem 1.25rem !important;
+  border-bottom: 1px solid #f1f3f5 !important;
+  background-color: transparent !important;
+  margin: 0 !important;
+  list-style-type: none !important;
+}
+
+.papiit-theme-wrapper .formal-list-group li.formal-list-item::marker {
+  content: none !important;
+  display: none !important;
+}
+
+.papiit-theme-wrapper .formal-list-group li.formal-list-item:before {
+  content: none !important;
+  display: none !important;
+}
+
+.papiit-theme-wrapper .formal-list-group li.formal-list-item:last-child {
+  border-bottom: none !important;
+}
+
+.papiit-theme-wrapper .formal-list-item span {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  line-height: 1.5;
+  padding-right: 1rem;
+}
+
+.papiit-theme-wrapper .hover-accent:hover {
+  color: var(--papiit-accent) !important;
   transition: color 0.2s ease;
 }
 
@@ -318,18 +565,6 @@ html {
   box-shadow: 0 12px 25px rgba(10, 54, 99, 0.08) !important;
 }
 
-.papiit-theme-wrapper .horizontal-card:hover .btn-hero-primary {
-  background-color: #ffffff !important;
-  color: var(--secondary) !important;
-  border-color: var(--secondary) !important;
-}
-
-.papiit-theme-wrapper .horizontal-card:hover .btn-hero-primary[style*="var(--accent)"] {
-  background-color: #ffffff !important;
-  color: var(--accent) !important;
-  border-color: var(--accent) !important;
-}
-
 .papiit-theme-wrapper .cover-column {
   min-height: 180px;
   position: relative;
@@ -342,15 +577,18 @@ html {
 
 /* Degradados específicos por subcolección */
 .papiit-theme-wrapper .cover-book {
-  background: linear-gradient(135deg, #004d40 0%, #00796b 100%) !important; /* Verde Teal oscuro */
+  background: linear-gradient(135deg, #004d40 0%, #00796b 100%) !important;
+  /* Verde Teal oscuro */
 }
 
 .papiit-theme-wrapper .cover-chapter {
-  background: linear-gradient(135deg, #4a148c 0%, #7b1fa2 100%) !important; /* Púrpura oscuro */
+  background: linear-gradient(135deg, #4a148c 0%, #7b1fa2 100%) !important;
+  /* Púrpura oscuro */
 }
 
 .papiit-theme-wrapper .cover-article {
-  background: linear-gradient(135deg, #880e4f 0%, #c2185b 100%) !important; /* Magenta/Rosa oscuro */
+  background: linear-gradient(135deg, #880e4f 0%, #c2185b 100%) !important;
+  /* Magenta/Rosa oscuro */
 }
 
 /* Efecto de lomo de libro en el borde izquierdo de la portada */
@@ -374,7 +612,7 @@ html {
 /* Hero rediseñado para subpáginas (Publicaciones) */
 .papiit-theme-wrapper .hero-publications {
   border-radius: 3rem !important;
-  background: 
+  background:
     radial-gradient(circle at 85% 15%, rgba(21, 101, 192, 0.15) 0%, transparent 50%),
     radial-gradient(circle at 15% 85%, rgba(13, 71, 161, 0.1) 0%, transparent 50%),
     linear-gradient(135deg, #061d33 0%, #0a3663 100%) !important;
@@ -390,62 +628,101 @@ html {
   opacity: 0.85;
 }
 
-/* Hero rediseñado para subpáginas (Difusión y Divulgación) */
+/* Hero rediseñado para subpáginas (Difusión y Divulgación) - Azul Marino Fuerte */
 .papiit-theme-wrapper .hero-difusion {
   border-radius: 3rem !important;
-  background: 
-    radial-gradient(circle at 85% 15%, rgba(239, 83, 80, 0.2) 0%, transparent 50%),
-    radial-gradient(circle at 15% 85%, rgba(176, 190, 197, 0.1) 0%, transparent 50%),
-    linear-gradient(135deg, #2c070e 0%, #4d101c 100%) !important;
-  box-shadow: 0 30px 60px rgba(44, 7, 14, 0.25) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background:
+    radial-gradient(circle at 85% 15%, rgba(21, 101, 192, 0.25) 0%, transparent 50%),
+    radial-gradient(circle at 15% 85%, rgba(13, 71, 161, 0.15) 0%, transparent 50%),
+    linear-gradient(135deg, #041a33 0%, #08294c 100%) !important;
+  box-shadow: 0 30px 60px rgba(93, 95, 97, 0.521) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
   position: relative;
   overflow: hidden;
 }
 
 /* Portadas temáticas para Difusión y Divulgación */
 .papiit-theme-wrapper .cover-web {
-  background: linear-gradient(135deg, #e65100 0%, #ff8f00 100%) !important; /* Naranja/Ámbar */
+  background: linear-gradient(135deg, #e65100 0%, #ff8f00 100%) !important;
+  /* Naranja/Ámbar */
 }
 
 .papiit-theme-wrapper .cover-ponencia {
-  background: linear-gradient(135deg, #b71c1c 0%, #e53935 100%) !important; /* Rojo/YouTube */
+  background: linear-gradient(135deg, #b71c1c 0%, #e53935 100%) !important;
+  /* Rojo/YouTube */
 }
 
 .papiit-theme-wrapper .cover-presentacion {
-  background: linear-gradient(135deg, #37474f 0%, #546e7a 100%) !important; /* Gris Pizarra */
+  background: linear-gradient(135deg, #37474f 0%, #546e7a 100%) !important;
+  /* Gris Pizarra */
 }
 
 .papiit-theme-wrapper .cover-podcast {
-  background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%) !important; /* Verde Bosque/Spotify */
+  background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%) !important;
+  /* Verde Bosque/Spotify */
 }
 
 .papiit-theme-wrapper .cover-glosario {
-  background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%) !important; /* Azul Rey */
+  background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%) !important;
+  /* Azul Rey */
 }
 
 .papiit-theme-wrapper .cover-bibliografia {
-  background: linear-gradient(135deg, #311b92 0%, #5e35b1 100%) !important; /* Violeta Profundo */
+  background: linear-gradient(135deg, #311b92 0%, #5e35b1 100%) !important;
+  /* Violeta Profundo */
 }
 
-/* Efecto para resaltar botones al hacer hover sobre la tarjeta completa */
-.papiit-theme-wrapper .horizontal-card:hover .btn-outline-primary {
-  background-color: var(--primary) !important;
-  color: #ffffff !important;
+/* Redefinir text-primary a un Slate/Navy moderno y premium */
+.papiit-theme-wrapper .text-primary {
+  color: #1e293b !important;
 }
-.papiit-theme-wrapper .horizontal-card:hover .btn-outline-danger {
-  background-color: #d32f2f !important;
+
+
+
+/* ==========================================
+   NAVEGACIÓN DE ISLAS DESCONECTADAS (PILLS) PAPIIT
+   ========================================== */
+.papiit-theme-wrapper .nav-island-pill {
+  background: var(--papiit-primary) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
   color: #ffffff !important;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.6rem 1.4rem;
+  border-radius: 50rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-.papiit-theme-wrapper .horizontal-card:hover .btn-outline-success {
-  background-color: #2e7d32 !important;
-  color: #ffffff !important;
-}
-.papiit-theme-wrapper .horizontal-card:hover .btn-outline-secondary {
-  background-color: #6c757d !important;
+
+.papiit-theme-wrapper .nav-island-pill:hover,
+.papiit-theme-wrapper .nav-island-pill:focus {
+  background: var(--papiit-secondary) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
   color: #ffffff !important;
 }
 
-/* Redefinir text-primary a azul marino obscuro */
-.text-primary { color: #0a3663 !important; }
+.papiit-theme-wrapper .nav-island-pill.active-pill {
+  background: var(--papiit-accent) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
 
+.papiit-theme-wrapper .nav-island-brand {
+  font-size: 1.1rem;
+  padding: 0.5rem 1.5rem;
+}
+
+
+
+
+/* ==========================================
+   OCULTAR EL SUB-MENÚ POR DEFECTO DE OMEKA S
+   ========================================== */
+nav.sub-menu {
+  display: none !important;
+}
