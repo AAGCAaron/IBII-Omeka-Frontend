@@ -30,8 +30,9 @@ html {
 .tamazola-theme-wrapper {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: var(--text-dark);
-  background-color: #ffffff;
-  /* Fondo limpio y blanco para Omeka */
+  background-color: var(--bg-soft-primary);
+  min-height: 100vh;
+  /* Fondo limpio y suave para Omeka */
   overflow-x: hidden;
 }
 
@@ -115,6 +116,7 @@ html {
   color: #ffffff !important;
   transition: all 0.3s ease !important;
 }
+
 .tamazola-theme-wrapper .btn-hero-primary:hover {
   background-color: #ffffff !important;
   color: var(--secondary) !important;
@@ -127,6 +129,7 @@ html {
   color: var(--secondary) !important;
   transition: all 0.3s ease !important;
 }
+
 .tamazola-theme-wrapper .btn-hero-outline:hover {
   background-color: var(--secondary) !important;
   color: #ffffff !important;
@@ -147,7 +150,7 @@ html {
 .tamazola-theme-wrapper .hero-ambient-bg {
   position: relative;
   background-color: transparent !important;
-  background-image: 
+  background-image:
     radial-gradient(circle at 15% 50%, rgba(13, 71, 161, 0.06) 0%, transparent 50%),
     radial-gradient(circle at 85% 30%, rgba(255, 179, 0, 0.08) 0%, transparent 50%),
     radial-gradient(circle at 80% 100%, rgba(10, 54, 99, 0.08) 0%, transparent 50%),
@@ -249,6 +252,7 @@ html {
 /* Secciones como "Islas Flotantes" separadas */
 .tamazola-theme-wrapper .floating-section {
   position: relative;
+  scroll-margin-top: 100px;
   background: linear-gradient(180deg, #ffffff 0%, #f4f7fb 100%);
   border-radius: 3rem;
   /* Bordes redondos arriba y abajo */
@@ -306,6 +310,7 @@ html {
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .tamazola-theme-wrapper .horizontal-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 25px rgba(43, 23, 4, 0.08) !important;
@@ -335,15 +340,18 @@ html {
 
 /* Degradados específicos por tipo de archivo */
 .tamazola-theme-wrapper .cover-document {
-  background: linear-gradient(135deg, #5d4037 0%, #3e2723 100%) !important; /* Marrón tierra/pergamino */
+  background: linear-gradient(135deg, #5d4037 0%, #3e2723 100%) !important;
+  /* Marrón tierra/pergamino */
 }
 
 .tamazola-theme-wrapper .cover-folder {
-  background: linear-gradient(135deg, #a0522d 0%, #8b4513 100%) !important; /* Siena tostado/rust */
+  background: linear-gradient(135deg, #a0522d 0%, #8b4513 100%) !important;
+  /* Siena tostado/rust */
 }
 
 .tamazola-theme-wrapper .cover-map {
-  background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%) !important; /* Verde oliva/bosque */
+  background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%) !important;
+  /* Verde oliva/bosque */
 }
 
 /* Efecto de lomo en el borde izquierdo */
@@ -367,7 +375,7 @@ html {
 /* Hero rediseñado para Tamazola Archivo (Earthy Dark Banner) */
 .tamazola-theme-wrapper .hero-archivo {
   border-radius: 3rem !important;
-  background: 
+  background:
     radial-gradient(circle at 85% 15%, rgba(212, 175, 55, 0.15) 0%, transparent 50%),
     radial-gradient(circle at 15% 85%, rgba(160, 82, 45, 0.15) 0%, transparent 50%),
     linear-gradient(135deg, #2b1704 0%, #44250a 100%) !important;
@@ -388,10 +396,12 @@ html {
   background-color: var(--primary) !important;
   color: #ffffff !important;
 }
+
 .tamazola-theme-wrapper .horizontal-card:hover .btn-outline-success {
   background-color: #2e7d32 !important;
   color: #ffffff !important;
 }
+
 .tamazola-theme-wrapper .horizontal-card:hover .btn-outline-secondary {
   background-color: #6c757d !important;
   color: #ffffff !important;
@@ -406,7 +416,7 @@ html {
 /* Hero rediseñado para Tamazola Museo (Forest/Green Dark Banner) */
 .tamazola-theme-wrapper .hero-museo {
   border-radius: 3rem !important;
-  background: 
+  background:
     radial-gradient(circle at 85% 15%, rgba(139, 195, 74, 0.15) 0%, transparent 50%),
     radial-gradient(circle at 15% 85%, rgba(46, 125, 50, 0.15) 0%, transparent 50%),
     linear-gradient(135deg, #0e3013 0%, #1c4d22 100%) !important;
@@ -418,23 +428,564 @@ html {
 
 /* Portadas temáticas para Museo Digital Comunitario */
 .tamazola-theme-wrapper .cover-audio {
-  background: linear-gradient(135deg, #4a148c 0%, #7b1fa2 100%) !important; /* Púrpura/Música */
+  background: linear-gradient(135deg, #4a148c 0%, #7b1fa2 100%) !important;
+  /* Púrpura/Música */
 }
 
 .tamazola-theme-wrapper .cover-tradition {
-  background: linear-gradient(135deg, #e65100 0%, #f57c00 100%) !important; /* Naranja/Costumbres */
+  background: linear-gradient(135deg, #e65100 0%, #f57c00 100%) !important;
+  /* Naranja/Costumbres */
 }
 
 .tamazola-theme-wrapper .cover-oral {
-  background: linear-gradient(135deg, #1b5e20 0%, #388e3c 100%) !important; /* Verde/Memoria Oral */
+  background: linear-gradient(135deg, #1b5e20 0%, #388e3c 100%) !important;
+  /* Verde/Memoria Oral */
 }
 
 /* Redefinir text-primary a un Slate/Navy moderno y premium */
-.text-primary { color: #1e293b !important; }
+.text-primary {
+  color: #1e293b !important;
+}
 
 
 
 /* Clases de colores tematicas para Archivo Bienes Comunales */
-.tamazola-theme-wrapper .cover-verde { background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%) !important; }
-.tamazola-theme-wrapper .cover-cafe { background: linear-gradient(135deg, #4a3b32 0%, #6d4c41 100%) !important; }
-.tamazola-theme-wrapper .cover-pastel { background: linear-gradient(135deg, #5c6b73 0%, #9db4c0 100%) !important; }
+.tamazola-theme-wrapper .cover-verde {
+  background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%) !important;
+}
+
+.tamazola-theme-wrapper .cover-cafe {
+  background: linear-gradient(135deg, #4a3b32 0%, #6d4c41 100%) !important;
+}
+
+.tamazola-theme-wrapper .cover-pastel {
+  background: linear-gradient(135deg, #5c6b73 0%, #9db4c0 100%) !important;
+}
+
+
+/* ==========================================================================
+   COMPONENTES: ARCHIVO DE BIENES COMUNALES (Versiones Duales y Visor PDF)
+   ========================================================================== */
+
+/* Tipografía y espaciado de tarjeta */
+.tamazola-theme-wrapper .card-doc-title {
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+.tamazola-theme-wrapper .card-doc-meta {
+  line-height: 1.5;
+}
+
+.tamazola-theme-wrapper .card-doc-desc {
+  line-height: 1.6;
+}
+
+/* Barra inferior de versiones en tarjeta */
+.tamazola-theme-wrapper .doc-version-bar {
+  margin-top: auto;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(108, 117, 125, 0.15);
+}
+
+.tamazola-theme-wrapper .doc-version-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #6c757d;
+}
+
+.tamazola-theme-wrapper .badge-doc-both {
+  font-size: 0.68rem;
+  background-color: #d1e7dd;
+  color: #0f5132;
+  border: 1px solid #badbcc;
+}
+
+.tamazola-theme-wrapper .badge-doc-single {
+  font-size: 0.68rem;
+  background-color: #cff4fc;
+  color: #055160;
+  border: 1px solid #b6effb;
+}
+
+/* Botones de acción en tarjetas */
+.tamazola-theme-wrapper .btn-doc-orig {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  color: #495057;
+  border: 1px solid #ced4da;
+  background-color: transparent;
+  border-radius: 50rem;
+  transition: all 0.2s ease;
+}
+
+.tamazola-theme-wrapper .btn-doc-orig:hover {
+  background-color: #495057 !important;
+  border-color: #495057 !important;
+  color: #ffffff !important;
+}
+
+.tamazola-theme-wrapper .btn-doc-trans {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  background-color: transparent;
+  border-radius: 50rem;
+  transition: all 0.2s ease;
+}
+
+.tamazola-theme-wrapper .btn-doc-trans:hover {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: #ffffff !important;
+}
+
+.tamazola-theme-wrapper .btn-doc-disabled {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  color: #8c98a4 !important;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 50rem;
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+/* ==========================================================================
+   ESTILOS DEL VISOR MODAL DUAL DE DOCUMENTOS PDF (CANVAS / PDF.JS)
+   ========================================================================== */
+
+.tamazola-theme-wrapper .pdf-modal-dialog {
+  max-width: 95vw;
+}
+
+.tamazola-theme-wrapper .pdf-modal-content {
+  background-color: #1a1a1a;
+  border: none;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.tamazola-theme-wrapper .pdf-modal-header {
+  background: linear-gradient(135deg, #2b1704 0%, #1b4332 100%);
+  color: #ffffff;
+  border: none;
+  padding: 0.85rem 1.25rem;
+}
+
+.tamazola-theme-wrapper .pdf-version-toggle-group {
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 0.25rem;
+  border-radius: 50rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.tamazola-theme-wrapper .btn-version-toggle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.85rem;
+  border-radius: 50rem;
+  border: none;
+  color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.tamazola-theme-wrapper .pdf-modal-title {
+  letter-spacing: 0.5px;
+}
+
+.tamazola-theme-wrapper .pdf-modal-zoom-val {
+  min-width: 50px;
+}
+
+.tamazola-theme-wrapper .pdf-modal-fit-btn {
+  font-size: 0.75rem;
+}
+
+.tamazola-theme-wrapper .pdf-modal-overlay {
+  z-index: 5;
+}
+
+.tamazola-theme-wrapper .pdf-modal-error-text {
+  font-size: 0.75rem;
+}
+
+.tamazola-theme-wrapper .pdf-canvas-wrapper {
+  min-height: 100%;
+}
+
+.tamazola-theme-wrapper .pdf-modal-toolbar {
+  background-color: #242424;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1.25rem;
+  min-height: 48px;
+}
+
+.tamazola-theme-wrapper .pdf-modal-page-counter {
+  padding: 0.25rem 0.75rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50rem;
+  color: #ffffff;
+  font-size: 0.82rem;
+}
+
+.tamazola-theme-wrapper .pdf-modal-zoom-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  background-color: transparent;
+  transition: all 0.2s ease;
+}
+
+.tamazola-theme-wrapper .pdf-modal-zoom-btn:hover {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+}
+
+.tamazola-theme-wrapper .pdf-modal-viewport {
+  height: 75vh;
+  overflow: auto;
+  background-color: #2b2b2b;
+}
+
+.tamazola-theme-wrapper .pdf-modal-viewport::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.tamazola-theme-wrapper .pdf-modal-viewport::-webkit-scrollbar-thumb {
+  background: #555555;
+  border-radius: 4px;
+}
+
+.tamazola-theme-wrapper .pdf-canvas-render {
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.8);
+  background-color: #ffffff;
+  border-radius: 4px;
+  max-width: 100%;
+  height: auto;
+  user-select: none;
+}
+
+.tamazola-theme-wrapper .pdf-modal-footer {
+  background-color: #161616;
+  color: #a0a0a0;
+  font-size: 0.8rem;
+  border: none;
+  padding: 0.6rem 1.25rem;
+}
+
+
+/* ==========================================================================
+   COMPONENTES COMPARTIDOS: HÉROES, SELLOS Y BADGES 
+   ========================================================================== */
+
+/* Contenedores de banners héroes */
+.tamazola-theme-wrapper .hero-banner-container {
+  position: relative;
+  z-index: 2;
+  padding: 3rem 1.5rem;
+}
+
+.tamazola-theme-wrapper .hero-serif-title {
+  font-family: Georgia, Garamond, 'Times New Roman', serif;
+  letter-spacing: 1.5px;
+}
+
+.tamazola-theme-wrapper .hero-lead-description {
+  line-height: 1.8;
+  font-size: 1.15rem;
+  max-width: 650px;
+}
+
+.tamazola-theme-wrapper .accent-divider {
+  width: 80px;
+  height: 4px;
+  background-color: var(--accent);
+  margin-bottom: 2rem;
+  border-radius: 2px;
+}
+
+/* Sellos decorativos circulares del Héroe */
+.tamazola-theme-wrapper .hero-seal-outer {
+  width: 150px;
+  height: 150px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 2px dashed rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.tamazola-theme-wrapper .hero-seal-inner-museo {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(139, 195, 74, 0.2) 0%, rgba(14, 48, 19, 0.4) 100%);
+}
+
+.tamazola-theme-wrapper .hero-seal-inner-archivo {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(43, 23, 4, 0.4) 100%);
+}
+
+.tamazola-theme-wrapper .badge-hero-museo {
+  color: #0e3013 !important;
+  letter-spacing: 1.5px;
+  font-size: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tamazola-theme-wrapper .badge-hero-archivo {
+  color: #2b1704 !important;
+  letter-spacing: 1.5px;
+  font-size: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tamazola-theme-wrapper .badge-hero-tamazola {
+  color: #001a33 !important;
+  letter-spacing: 1px;
+  border: 1px solid rgba(10, 54, 99, 0.1);
+}
+
+/* Recuadros de iconos para títulos de sección */
+.tamazola-theme-wrapper .section-badge-box {
+  width: 250px;
+  height: 120px;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  margin-left: auto;
+}
+
+.tamazola-theme-wrapper .section-badge-box-primary {
+  background-color: var(--primary);
+}
+
+.tamazola-theme-wrapper .section-badge-box-secondary {
+  background-color: var(--secondary);
+}
+
+.tamazola-theme-wrapper .section-badge-box-verde {
+  background-color: #1b4332;
+}
+
+.tamazola-theme-wrapper .section-badge-box-cafe {
+  background-color: #4a3b32;
+}
+
+.tamazola-theme-wrapper .section-badge-box-pastel {
+  background-color: #5c6b73;
+}
+
+/* Etiquetas en portadas horizontales */
+.tamazola-theme-wrapper .cover-tag {
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+}
+
+/* Botón de estado pendiente deshabilitado */
+.tamazola-theme-wrapper .btn-status-pending {
+  opacity: 0.65;
+  pointer-events: none;
+  cursor: default;
+}
+
+/* Tarjetas del Hub de Navegación de Tamazola */
+.tamazola-theme-wrapper .hero-tamazola-home {
+  border-radius: 3rem !important;
+  box-shadow: 0 30px 60px rgba(10, 54, 99, 0.15), 0 -10px 40px rgba(13, 71, 161, 0.1) !important;
+}
+
+.tamazola-theme-wrapper .hero-img-tamazola {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.tamazola-theme-wrapper .hub-card-archivo {
+  border-left: 5px solid #8b4513 !important;
+}
+
+.tamazola-theme-wrapper .hub-card-museo {
+  border-left: 5px solid #2e7d32 !important;
+}
+
+.tamazola-theme-wrapper .hub-icon-circle-archivo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+  border: 1px solid rgba(139, 69, 19, 0.15);
+  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.08);
+}
+
+.tamazola-theme-wrapper .hub-icon-circle-museo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+  border: 1px solid rgba(46, 125, 50, 0.15);
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.08);
+}
+
+.tamazola-theme-wrapper .btn-hub-archivo {
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  background-color: #8b4513 !important;
+  border-color: #8b4513 !important;
+  color: #ffffff !important;
+  transition: all 0.3s ease;
+}
+
+.tamazola-theme-wrapper .btn-hub-archivo:hover {
+  background-color: #5c2d0c !important;
+  border-color: #5c2d0c !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+.tamazola-theme-wrapper .btn-hub-museo {
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  background-color: #2e7d32 !important;
+  border-color: #2e7d32 !important;
+  color: #ffffff !important;
+  transition: all 0.3s ease;
+}
+
+.tamazola-theme-wrapper .btn-hub-museo:hover {
+  background-color: #1b5e20 !important;
+  border-color: #1b5e20 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+/* Colores de iconos en Hub de Navegación */
+.tamazola-theme-wrapper .hub-icon-circle-archivo i {
+  color: #8b4513 !important;
+}
+
+.tamazola-theme-wrapper .hub-icon-circle-museo i {
+  color: #2e7d32 !important;
+}
+
+/* Iconos de sellos de cabecera y recuadros de sección */
+.tamazola-theme-wrapper .hero-seal-inner-museo i,
+.tamazola-theme-wrapper .hero-seal-inner-archivo i {
+  font-size: 3.2rem;
+  opacity: 0.9;
+}
+
+.tamazola-theme-wrapper .section-badge-box i {
+  font-size: 4rem;
+  opacity: 0.5;
+}
+
+/* Tipografía y espaciado de cabeceras y subtítulos */
+.tamazola-theme-wrapper .hero-title-main {
+  line-height: 1.2;
+}
+
+.tamazola-theme-wrapper .hero-text-secondary {
+  line-height: 1.6;
+}
+
+.tamazola-theme-wrapper .section-subtitle {
+  line-height: 1.6;
+}
+
+.tamazola-theme-wrapper .hero-tamazola-home .hero-lead-description {
+  color: #495057 !important;
+  line-height: 1.6;
+}
+
+/* Portadas para tarjetas de archivo histórico (Grid Vertical) */
+.tamazola-theme-wrapper .card-doc-cover {
+  min-height: 160px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.tamazola-theme-wrapper .card-doc-cover-verde {
+  background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%) !important;
+}
+
+.tamazola-theme-wrapper .card-doc-cover-verde i,
+.tamazola-theme-wrapper .card-doc-cover-verde .card-doc-year {
+  color: #d8f3dc !important;
+  opacity: 0.9;
+}
+
+.tamazola-theme-wrapper .card-doc-cover-cafe {
+  background: linear-gradient(135deg, #4a3b32 0%, #6f4e37 100%) !important;
+}
+
+.tamazola-theme-wrapper .card-doc-cover-cafe i,
+.tamazola-theme-wrapper .card-doc-cover-cafe .card-doc-year {
+  color: #f5ebe0 !important;
+  opacity: 0.9;
+}
+
+.tamazola-theme-wrapper .card-doc-cover-pastel {
+  background: linear-gradient(135deg, #2b3a42 0%, #4f6d7a 100%) !important;
+}
+
+.tamazola-theme-wrapper .card-doc-cover-pastel i,
+.tamazola-theme-wrapper .card-doc-cover-pastel .card-doc-year {
+  color: #e0fbfc !important;
+  opacity: 0.9;
+}
+
+.tamazola-theme-wrapper .card-doc-cover-accent {
+  background: linear-gradient(135deg, #0a3663 0%, #1565c0 100%) !important;
+}
+
+.tamazola-theme-wrapper .card-doc-cover-accent i,
+.tamazola-theme-wrapper .card-doc-cover-accent .card-doc-year {
+  color: #e3f2fd !important;
+  opacity: 0.9;
+}
+
+.tamazola-theme-wrapper .card-doc-year {
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  z-index: 2;
+}

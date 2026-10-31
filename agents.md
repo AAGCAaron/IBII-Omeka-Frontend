@@ -12,12 +12,19 @@
 ---
 
 ## 2. Pila Tecnológica y Estructura
-* **HTML:** HTML5 puro. El código HTML se inyecta directamente en Omeka, por lo que NO debe llevar las etiquetas `<html>`, `<head>` o `<body>`. Todo se envuelve en un contenedor principal `<div class="container-fluid px-0 papiit-theme-wrapper">`.
+* **HTML:** HTML5 puro. El código HTML se inyecta directamente en Omeka, por lo que NO debe llevar las etiquetas `<html>`, `<head>` o `<body>`. Todo se envuelve en un contenedor principal `<div class="container-fluid px-0 papiit-theme-wrapper">` (o `.tamazola-theme-wrapper`).
 * **CSS:** CSS Vanilla.
 * **Frameworks Externos (vía CSS):** 
   * Bootstrap v5.3.8
   * Bootstrap Icons v1.11.3
   * *Nota para la IA:* Estos frameworks se cargan localmente usando `@import` al inicio del archivo `style.css` (`/application/asset/vendor/...`).
+* **Regla Estricta de Buenas Prácticas (Separación de Estilos vs HTML):**
+  * **Prohibido saturar el HTML con atributos `style="..."` repetitivos.** Toda regla visual recurrente (dimensiones de cajas, recuadros de iconos, bordes coloreados, gradientes temáticos, tamaños de fuente, transformaciones, sellos y botones) **debe definirse obligatoriamente como clase CSS semántica en su respectivo archivo `style.css`**, encapsulada bajo el wrapper correspondiente (`.tamazola-theme-wrapper` o `.papiit-theme-wrapper`).
+  * **Motivos de arquitectura y compatibilidad:**
+    1. Mantiene el HTML ligero, limpio y legible.
+    2. Previene que el filtro de seguridad de Omeka S (*HTML Purifier*) mutile o borre estilos en línea complejos (como variables `var()`, funciones `rgba()`, o transiciones).
+    3. Permite declarar de forma estricta los estados `:hover` y `:focus` con `color: #ffffff !important;` (imposibles de declarar en atributos `style`).
+    4. Garantiza que cualquier ajuste visual global futuro se realice en una sola línea de CSS y no editando decenas de tarjetas en el HTML.
 
 ---
 
@@ -64,6 +71,29 @@ Los recursos multimedia (como Spotify o YouTube) o enlaces académicos se maneja
 * **Repositorio UNAM:** `btn-outline-primary` + `bi-bank` (para visualización/lectura de PDFs).
 * **Descargas directas (EPUB):** `btn-outline-success` + `bi-download` con atributo `download`.
 * **Botones Principales (Hub):** Clases customizadas (`btn-hero-primary`, `btn-hero-accent`, `btn-hero-warning`, `btn-hero-indigo`) creadas en `style.css` que aseguran colores sólidos e íconos.
+
+### E. Tarjetas de Archivo Histórico con Soporte Dual (Bienes Comunales)
+Diseñadas para acervos documentales con manuscritos históricos y transcripciones paleográficas.
+* **Clases en `style.css`:**
+  - Contenido: `.card-doc-title`, `.card-doc-meta`, `.card-doc-desc`.
+  - Portadas y Años: `.card-doc-cover`, `.card-doc-cover-verde`, `.card-doc-cover-cafe`, `.card-doc-cover-pastel`, `.card-doc-cover-accent`, `.card-doc-year`.
+  - Barra de versiones: `.doc-version-bar`, `.doc-version-label`.
+  - Badges de estado: `.badge-doc-both` (ambas versiones disponibles), `.badge-doc-single` (solo transcripción).
+  - Botones de acción: `.btn-doc-orig` (manuscrito original), `.btn-doc-trans` (transcripción paleográfica), `.btn-doc-disabled` (versión no digitalizada aún).
+* **Regla de Clic (Sin `.stretched-link`):** Dado que cada tarjeta ofrece dos acciones distintas (*Original* vs *Transcripción*), **está prohibido usar `.stretched-link` en estas tarjetas** para evitar solapamiento de enlaces en el contenedor.
+
+### F. Hero Banners y Sellos Institucionales (Tamazola y PAPIIT)
+* **Contenedor Principal:** `.hero-banner-container` con padding vertical y aislamiento de capas z-index.
+* **Tipografía Formal:** Títulos de impacto formal con `.hero-serif-title` y `.hero-title-main`.
+* **Separadores y Bajadas:** Líneas decorativas con `.accent-divider`, y textos introductorios con `.hero-lead-description` y `.hero-text-secondary`.
+* **Sellos Circulares Decorativos:** Construidos con doble anillo concéntrico (`.hero-seal-outer` con borde punteado suave, y `.hero-seal-inner-museo` o `.hero-seal-inner-archivo` con degradado translúcido). Sus dimensiones e iconos están estrictamente tipados en `style.css`.
+* **Badges Temáticos:** `.badge-hero-museo`, `.badge-hero-archivo`, `.badge-hero-tamazola`.
+* **Cajas de Icono para Títulos de Sección:** Bloques rectangulares `.section-badge-box` con variantes cromáticas (`-primary`, `-secondary`, `-verde`, `-cafe`, `-pastel`) y subtítulos con `.section-subtitle`.
+
+### G. Hubs de Navegación Principal (Cards de Acceso Directo)
+* **Diseño:** Tarjetas de acceso a colecciones principales (`.hub-card-archivo`, `.hub-card-museo`) con borde lateral distintivo de color (ej. `#8b4513` para archivo comunal, `#2e7d32` para museo).
+* **Iconos en Círculo:** `.hub-icon-circle-archivo` y `.hub-icon-circle-museo` con centrado flexbox estricto y sin espacios en blanco (usando `&zwj;`).
+* **Botones de Redirección:** `.btn-hub-archivo` y `.btn-hub-museo` con estados `:hover` forzados a `color: #ffffff !important;` y leve elevación (`translateY(-2px)`).
 
 ---
 
@@ -115,10 +145,15 @@ Al inyectar código en Omeka S, los estilos globales del tema de Omeka suelen "r
 ---
 
 ## 6. Archivos Clave del Proyecto
-1. **[Tests/papiit.html](file:///d:/OMEKAS/Tests/papiit.html)**: Portal de navegación o Home del sitio. Rediseñado como un hub que enlaza a las subpáginas `/s/papiit/page/publicaciones` y `/s/papiit/page/ProductosDeDifusionYDivulgacion` mediante tarjetas interactivas gigantes, libre de listados redundantes.
-2. **[Tests/coleccionesPAPIIT/publicaciones.html](file:///d:/OMEKAS/Tests/coleccionesPAPIIT/publicaciones.html)**: Subpágina de la colección de Publicaciones con descarga de EPUBs y lectura directa de PDFs.
-3. **[Tests/coleccionesPAPIIT/productosDeDifusionYDivulgacion.html](file:///d:/OMEKAS/Tests/coleccionesPAPIIT/productosDeDifusionYDivulgacion.html)**: Subpágina de la colección de Difusión con tarjetas horizontales completamente integradas con `.stretched-link` y el nuevo gradiente del héroe color vino.
-4. **[PAPIIT/style.css](file:///d:/OMEKAS/PAPIIT/style.css)**: Hoja de estilos centralizada para el tema PAPIIT. Contiene variables, gradientes de héroes, colores temáticos de portadas y transiciones hover de tarjetas.
-5. **[src/MuseoTamazola/colecciones Tamazola/ArchivoBienesComunales.html](file:///d:/OMEKAS/src/MuseoTamazola/colecciones%20Tamazola/ArchivoBienesComunales.html)**: Subcolección del Archivo del Comisariado de Bienes Comunales de Tamazola. Integra el grid en 4 columnas temáticas por épocas históricas, estados "En revisión" y el visor seguro en modal Canvas (PDF.js) sin barras de descarga.
-6. **[Omeka_colecciones.md](file:///d:/OMEKAS/Omeka_colecciones.md)**: Fuente única de verdad para el contenido textual y los hipervínculos de los recursos.
+1. **[src/PAPIIT/papiit.html](file:///d:/OMEKAS/src/PAPIIT/papiit.html)**: Portal de navegación o Home del sitio PAPIIT. Rediseñado como un hub que enlaza a las subpáginas `/s/papiit/page/publicaciones` y `/s/papiit/page/ProductosDeDifusionYDivulgacion` mediante tarjetas interactivas gigantes, libre de listados redundantes y sin estilos inline.
+2. **[src/PAPIIT/coleccionesPAPIIT/publicaciones.html](file:///d:/OMEKAS/src/PAPIIT/coleccionesPAPIIT/publicaciones.html)**: Subpágina de la colección de Publicaciones con descarga de EPUBs y lectura directa de PDFs.
+3. **[src/PAPIIT/coleccionesPAPIIT/productosDeDifusionYDivulgacion.html](file:///d:/OMEKAS/src/PAPIIT/coleccionesPAPIIT/productosDeDifusionYDivulgacion.html)**: Subpágina de la colección de Difusión con tarjetas horizontales completamente integradas con `.stretched-link` y el degradado del héroe color vino.
+4. **[src/PAPIIT/style.css](file:///d:/OMEKAS/src/PAPIIT/style.css)**: Hoja de estilos centralizada para el tema PAPIIT (`.papiit-theme-wrapper`). Contiene variables, gradientes de héroes, colores temáticos de portadas y transiciones hover de tarjetas.
+5. **[src/MuseoTamazola/museoTamazola.html](file:///d:/OMEKAS/src/MuseoTamazola/museoTamazola.html)**: Portal de inicio y Hub del Museo Tamazola (`/s/museo-Tamazola/page/museo-tamazola`). Contiene el héroe descriptivo y las tarjetas de acceso rápido al Archivo de Bienes Comunales y al Museo Comunitario, 100% libre de atributos `style=""`.
+6. **[src/MuseoTamazola/colecciones Tamazola/museoDigitalComunitario.html](file:///d:/OMEKAS/src/MuseoTamazola/colecciones%20Tamazola/museoDigitalComunitario.html)**: Subpágina del Museo Digital Comunitario (`/s/museo-Tamazola/page/museodigitalcomunitario`). Maqueta las 6 colecciones culturales (Memoria oral, música, fiestas patronales, pedimentos, danzas) en tarjetas horizontales semánticas sin estilos inline.
+7. **[src/MuseoTamazola/colecciones Tamazola/ArchivoBienesComunales.html](file:///d:/OMEKAS/src/MuseoTamazola/colecciones%20Tamazola/ArchivoBienesComunales.html)**: Subcolección del Archivo del Comisariado de Bienes Comunales de Tamazola (`/s/museo-Tamazola/page/archivo-bienes-comunales`). Integra el grid en 4 columnas temáticas por épocas históricas, soporte dual de versiones (**Manuscrito Original** y **Transcripción Paleográfica**), y el visor seguro en modal Canvas (PDF.js) que permite alternar entre ambas versiones en tiempo real sin barras nativas de descarga ni estilos inline.
+8. **[src/MuseoTamazola/style.css](file:///d:/OMEKAS/src/MuseoTamazola/style.css)**: Hoja de estilos centralizada para el tema del Museo Tamazola (`.tamazola-theme-wrapper`). Contiene variables ocre/tierra, componentes compartidos (banners, sellos, badges), tarjetas históricas duales y el diseño del visor modal PDF con Canvas.
+9. **[src/MuseoTamazola/colecciones Tamazola/Archivo_LinksPDFs.csv](file:///d:/OMEKAS/src/MuseoTamazola/colecciones%20Tamazola/Archivo_LinksPDFs.csv)**: Archivo maestro de metadatos y enlaces PDF para el Archivo de Bienes Comunales (42 registros con columnas de `link pdf original` y `link pdf translitearacion`).
+10. **[Omeka_colecciones.md](file:///d:/OMEKAS/Omeka_colecciones.md)**: Fuente única de verdad para el contenido textual y los hipervínculos de los recursos.
+
 

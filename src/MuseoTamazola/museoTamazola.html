@@ -17,29 +17,26 @@
   <!-- ========================================================== -->
 
   <!-- Contenedor Principal del Home -->
-  <div class="container-fluid px-0 tamazola-theme-wrapper"
-    style="background-color: var(--bg-soft-primary); min-height: 100vh;">
+  <div class="container-fluid px-0 tamazola-theme-wrapper">
 
     <!-- 1. Sección Héroe (Hero Section) -->
-    <div class="hero-ambient-bg floating-section mx-3 mx-lg-5 mt-4 mb-5"
-      style="border-radius: 3rem !important; box-shadow: 0 30px 60px rgba(10, 54, 99, 0.15), 0 -10px 40px rgba(13, 71, 161, 0.1) !important;">
+    <div class="hero-ambient-bg hero-tamazola-home floating-section mx-3 mx-lg-5 mt-4 mb-5">
       <div class="container">
         <div class="row align-items-center g-5">
           <!-- Lado Izquierdo: Textos -->
           <div class="col-lg-6">
-            <span class="badge rounded-pill bg-light mb-3 px-3 py-2 fw-bold shadow-sm"
-              style="color: #001a33 !important; letter-spacing: 1px; border: 1px solid rgba(10, 54, 99, 0.1);">
+            <span class="badge rounded-pill bg-light mb-3 px-3 py-2 fw-bold shadow-sm badge-hero-tamazola">
               PROYECTO MUSEO DIGITAL
             </span>
-            <h1 class="display-4 fw-bold text-primary mb-4" style="line-height: 1.2;">
+            <h1 class="display-4 fw-bold text-primary mb-4 hero-title-main">
               Museo y archivo digital de San Juan Tamazola, Oaxaca
             </h1>
-            <p class="text-dark mb-4" style="line-height: 1.6; font-size: 1.1rem; color: #495057 !important;">
+            <p class="text-dark mb-4 hero-lead-description">
               San Juan Tamazola es una población indígena ubicada en la región de la Mixteca Alta del estado mexicano de
               Oaxaca. Su nombre se compone de “tamazollin” (sapo) y “tlan” (lugar). Antiguamente era conocido en lengua
               mixteca como Ñuu ya’va (lugar donde se asientan las águilas).
             </p>
-            <p class="text-muted mb-4" style="line-height: 1.6;">
+            <p class="text-muted mb-4 hero-text-secondary">
               Con una historia de 900 años, sus habitantes cuentan con una rica tradición oral y una riqueza cultural
               expresada en su música y costumbres. Este proyecto tiene el objetivo de albergar los diferentes materiales
               que dan testimonio de su patrimonio.
@@ -48,15 +45,14 @@
           <!-- Lado Derecho: Ilustración -->
           <div class="col-lg-6 text-center">
             <img src="http://132.248.159.9/files/asset/1f8e6156b09552e1f7c2be671a17b30cf5de4473.gif"
-              alt="Hero Museo Tamazola" class="img-fluid rounded-4 shadow-lg"
-              style="width: 100%; height: auto; object-fit: contain; border: 1px solid rgba(0,0,0,0.1);">
+              alt="Hero Museo Tamazola" class="img-fluid rounded-4 shadow-lg hero-img-tamazola">
           </div>
         </div>
       </div>
     </div>
 
     <!-- SECCIÓN DE ACCESO RÁPIDO / HUB DE NAVEGACIÓN -->
-    <div class="floating-section mx-3 mx-lg-5 mb-5" style="scroll-margin-top: 100px;">
+    <div class="floating-section mx-3 mx-lg-5 mb-5">
       <!-- Figuras CSS decorativas -->
       <div class="bg-shape-ocean-1">&nbsp;</div>
 
@@ -64,7 +60,7 @@
         <div class="row mb-5 text-center">
           <div class="col-lg-8 mx-auto">
             <h2 class="display-6 fw-bold text-primary mb-3">Secciones del Museo y Archivo</h2>
-            <p class="text-muted fs-6" style="line-height: 1.6;">
+            <p class="text-muted fs-6 section-subtitle">
               Explore los diferentes fondos documentales de tenencia de la tierra y las colecciones culturales de la
               comunidad de San Juan Tamazola.
             </p>
@@ -75,26 +71,23 @@
 
           <!-- Tarjeta 1: Archivo de Bienes Comunales -->
           <div class="col-12 col-lg-6">
-            <div class="horizontal-card position-relative h-100 p-4 d-flex flex-column justify-content-between"
-              style="border-left: 5px solid #8b4513 !important;">
+            <div class="horizontal-card position-relative h-100 p-4 d-flex flex-column justify-content-between hub-card-archivo">
               <div>
                 <div class="d-flex align-items-center mb-3">
-                  <div class="rounded-circle d-flex align-items-center justify-content-center bg-light shadow-sm"
-                    style="width: 60px; height: 60px; border: 1px solid rgba(139, 69, 19, 0.1);">
-                    <i class="bi bi-folder2-open text-primary display-6" style="color: #8b4513 !important;">&zwj;</i>
+                  <div class="hub-icon-circle-archivo">
+                    <i class="bi bi-folder2-open display-6">&zwj;</i>
                   </div>
                   <h3 class="h4 fw-bold text-primary mb-0 ms-3">Archivo de Bienes Comunales</h3>
                 </div>
-                <p class="text-secondary small mb-4" style="line-height: 1.7;">
+                <p class="text-secondary small mb-4 card-doc-desc">
                   Acceso completo al acervo documental histórico, actas de asambleas generales, resoluciones
                   presidenciales de reconocimiento de límites y planos cartográficos custodiados por el Comisariado.
                 </p>
               </div>
               <div class="text-end">
                 <a href="http://132.248.159.9/s/museo-Tamazola/page/archivo-bienes-comunales"
-                  class="btn btn-hero-primary px-4 py-2 rounded-pill fw-bold text-uppercase stretched-link"
-                  style="font-size: 0.85rem; letter-spacing: 0.5px; background-color: #8b4513 !important; border-color: #8b4513 !important;">
-                  Explorar Archivo <i class="bi bi-arrow-right ms-2">&nbsp;</i>
+                  class="btn btn-hub-archivo px-4 py-2 rounded-pill fw-bold text-uppercase stretched-link">
+                  Explorar Archivo <i class="bi bi-arrow-right ms-2">&zwj;</i>
                 </a>
               </div>
             </div>
@@ -102,26 +95,23 @@
 
           <!-- Tarjeta 2: Museo Digital Comunitario -->
           <div class="col-12 col-lg-6">
-            <div class="horizontal-card position-relative h-100 p-4 d-flex flex-column justify-content-between"
-              style="border-left: 5px solid #2e7d32 !important;">
+            <div class="horizontal-card position-relative h-100 p-4 d-flex flex-column justify-content-between hub-card-museo">
               <div>
                 <div class="d-flex align-items-center mb-3">
-                  <div class="rounded-circle d-flex align-items-center justify-content-center bg-light shadow-sm"
-                    style="width: 60px; height: 60px; border: 1px solid rgba(46, 125, 50, 0.1);">
-                    <i class="bi bi-bank text-success display-6" style="color: #2e7d32 !important;">&zwj;</i>
+                  <div class="hub-icon-circle-museo">
+                    <i class="bi bi-bank display-6">&zwj;</i>
                   </div>
                   <h3 class="h4 fw-bold text-primary mb-0 ms-3">Museo Digital Comunitario</h3>
                 </div>
-                <p class="text-secondary small mb-4" style="line-height: 1.7;">
+                <p class="text-secondary small mb-4 card-doc-desc">
                   Recorrido virtual interactivo sobre la memoria oral de Tamazola (Ñuu ya'va), incluyendo registros de
                   la música regional, festividades patronales, acuerdos matrimoniales tradicionales y danzas autóctonas.
                 </p>
               </div>
               <div class="text-end">
                 <a href="http://132.248.159.9/s/museo-Tamazola/page/museodigitalcomunitario"
-                  class="btn btn-hero-primary px-4 py-2 rounded-pill fw-bold text-uppercase stretched-link"
-                  style="font-size: 0.85rem; letter-spacing: 0.5px; background-color: #2e7d32 !important; border-color: #2e7d32 !important;">
-                  Ver Museo Comunitario <i class="bi bi-arrow-right ms-2">&nbsp;</i>
+                  class="btn btn-hub-museo px-4 py-2 rounded-pill fw-bold text-uppercase stretched-link">
+                  Ver Museo Comunitario <i class="bi bi-arrow-right ms-2">&zwj;</i>
                 </a>
               </div>
             </div>
@@ -134,8 +124,8 @@
   </div>
 
   <!-- ========================================================== -->
-    <!-- DE INICIO A FIN DE ESTE BLOQUE: BORRAR PARA PRODUCCIÓN EN OMEKA S -->
-    <script src="../../assets/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <!-- DE INICIO A FIN DE ESTE BLOQUE: BORRAR PARA PRODUCCIÓN EN OMEKA S -->
+  <script src="../../assets/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
