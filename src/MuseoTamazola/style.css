@@ -614,6 +614,19 @@ html {
   z-index: 5;
 }
 
+.tamazola-theme-wrapper .pdf-progress-track {
+  height: 6px;
+  width: 220px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.tamazola-theme-wrapper .pdf-progress-detail {
+  font-size: 0.75rem;
+  margin-bottom: 0;
+}
+
 .tamazola-theme-wrapper .pdf-modal-error-text {
   font-size: 0.75rem;
 }
@@ -988,4 +1001,11 @@ html {
   font-size: 0.75rem;
   letter-spacing: 1px;
   z-index: 2;
+}
+
+/* ==========================================
+   OCULTAR EL SUB-MENÚ POR DEFECTO DE OMEKA S
+   ========================================== */
+nav.sub-menu {
+  display: none !important;
 }
